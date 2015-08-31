@@ -28,6 +28,7 @@ def index(request):
 	#输出总条数
 	counts = results.count()
 	for r in results:
+		#设置高亮
 		r.name = highlight.highlight(r.name)
 	#unicode -> string  unicodestring.endcode('utf-8') 
 	#string -> unicode unicode(utf8string,'utf-8)
