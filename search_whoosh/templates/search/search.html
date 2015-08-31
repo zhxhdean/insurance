@@ -1,0 +1,22 @@
+<style>
+	.highlighted{color:red}
+</style>
+{% load highlight %}
+{% autoescape off %}
+<h1>search with whoosh </h1>
+<form method="get" action=".">
+	<input type="text" name="key"/>
+	<input type="submit" value="search" />
+{% if data %}
+<ul>
+{% for r in data%}
+<li>
+{{r.name}} {{r.pub_date}}</li>
+{% endfor %}
+总{{counts}}记录
+</ul>
+{% else %}
+no data
+{%endif%}
+</form>
+{% endautoescape %}
